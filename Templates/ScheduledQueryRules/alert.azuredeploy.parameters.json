@@ -1,0 +1,42 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+	"appInsightName": {
+      "value": "appinsightname"
+    },
+    "location": {
+      "value": "location"
+    },
+	  "alertName": {
+      "value": "Send Alert When Alert Occour for Test"
+    },
+    "alertGroupName": {
+      "value": ""
+    },
+    "query":{
+      "value": "union (traces), (requests), (pageViews), (dependencies), (customEvents), (availabilityResults), (exceptions) | where * has 'SomeText'"
+    },
+    "description": {
+      "value": "Send Alert to group of admin where special text occour."
+    },
+    "severityLevel":{
+      "value": "2"
+    },
+    "frequency": {
+        "value":5
+    },
+    "time": {
+        "value":5
+    },
+    "triggerOperator": {
+        "value":"GreaterThan"
+    },
+    "threshold": {
+        "value":"0"
+    },
+    "subject": {
+        "value":"There is New Alert in application."
+    }  
+  }
+}

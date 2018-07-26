@@ -1,0 +1,42 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+	"appInsightName": {
+      "value": "appInsightName"
+    },
+    "location": {
+      "value": "location"
+    },
+	  "alertName": {
+      "value": "Send Alert When Error Occour for Test"
+    },
+    "alertGroupName": {
+      "value": ""
+    },
+    "query":{
+      "value": "union (traces), (requests), (pageViews), (dependencies), (customEvents), (availabilityResults), (exceptions)\n| extend trace_severityLevel = iif(itemType == 'trace',severityLevel,toint(''))\n| where trace_severityLevel == 3\n"
+    },
+    "description": {
+      "value": "Send Alert to group of admin where severity level is 3. Level 3 = Error"
+    },
+    "severityLevel":{
+      "value": "3"
+    },
+    "frequency": {
+        "value":5
+    },
+    "time": {
+        "value":5
+    },
+    "triggerOperator": {
+        "value":"GreaterThan"
+    },
+    "threshold": {
+        "value":"0"
+    },
+    "subject": {
+        "value":"There is Error in application"
+    }  
+  }
+}

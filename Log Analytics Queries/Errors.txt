@@ -1,0 +1,3 @@
+AzureDiagnostics 
+| where Category == 'Errors'
+| where DatabaseName_s contains "DB1" or DatabaseName_s contains "DB2" or DatabaseName_s contains "DB3" or DatabaseName_s contains "DB4"

@@ -1,0 +1,4 @@
+AzureDiagnostics 
+| where Category == 'QueryStoreRuntimeStatistics'
+| where duration_d/1000000/60 > 60
+| where DatabaseName_s contains "DB1" or DatabaseName_s contains "DB2" or DatabaseName_s contains "DB3" or DatabaseName_s contains "DB4"

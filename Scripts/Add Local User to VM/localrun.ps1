@@ -1,10 +1,12 @@
 param(
     [string] $userName,
-    [secureString] $password,
+    [string] $password,
     [string] $fullName,
     [string] $description,
     [string] $groupName
 )
 
-New-LocalUser $userName -Password $password -FullName $fullName -Description $description
+$secure = ConvertTo-SecureString $password -AsPlainText -Force
+
+New-LocalUser $userName -Password $secure -FullName $fullName -Description $description
 Add-LocalGroupMember -Group $groupName -Member $userName

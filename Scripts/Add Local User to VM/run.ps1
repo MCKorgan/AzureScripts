@@ -1,10 +1,10 @@
-$resourceGroupVM = "abb-mc-test-rg"
-$virtualMachineName = "abb-mc-test-vm"
+$resourceGroupVM = "rgVM"
+$virtualMachineName = "vmName"
 $scriptPath = "localrun.ps1"
-$userName = "TestName666"
-$password = "***REMOVED***"
+$userName = "usName"
+$password = "password"
 $fullName = "Test Name"
 $description = "Desc"
-$groupName = "Administrators"
+$groupName = "Group"
 
-Invoke-AzureRmVMRunCommand -ResourceGroupName $resourceGroupVM -Name $virtualMachineName -CommandId 'RunPowerShellScript' -ScriptPath $scriptPath -Parameter @{"userName" = $userName;"password" = $password;"fullName" = $fullName;"description" = $description;"groupName" = $groupName} -Debug
+Invoke-AzureRmVMRunCommand -ResourceGroupName $resourceGroupVM -Name $virtualMachineName -CommandId 'RunPowerShellScript' -ScriptPath $scriptPath -Parameter @{"userName" = $userName;"password" = $password;"fullName" = $fullName;"description" = $description;"groupName" = $groupName}

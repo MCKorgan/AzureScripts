@@ -23,7 +23,7 @@ Param
     $TagName = '01_dplynam'
 ) 
 
-#Connect-AzureRMAccount
+Connect-AzureRMAccount
 Select-AzureRmSubscription -SubscriptionId $SubscriptionId
 
 if($VirtualMachinesListToNotChange -ne "NONE")
